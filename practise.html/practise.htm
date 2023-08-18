@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container mt-10   flex justify-center">
+  <div class="bg-blue-400 w-3/4  border-2 ">
+    <h1 class="text-center text-2xl bold capitalize">My text Editor</h1>
+         <div class="bg-blue-200 border-2 border-black m-10">
+         <div class=" bg-blue-200 border-black p-2  flex items-center ">
+        <div class="text-left">
+            <button class="rounded  bg-blue-400 px-2 text-2xl bold " id="bold">B</button>
+            <button class="rounded px-2  italic uppercase text-2xl bold" id="italic"> i </button>
+            <button id="underline" class="underline text-2xl bold uppercase">u</button>
+            
+         </div>
+        
+        <div class="text-center mx-auto">
+          <i id="left" class="fa-solid fa-bars"></i>
+          <i id="center"  class="fa-solid fa-bars"></i>
+          <i id="right" class="fa-solid fa-bars"></i>
+          <i id="left" class="fa-solid fa-bars"></i>
+        </div>
+        <div class="text-right flex gap-2">
+          <h1>17</h1>
+          <h1>aA</h1>
+          <input type="color" name="" id="color">
+        </div>
+        
+      </div>
+      <hr class="border-black mx-4 h-2 border-t-2">
+       <div class="flex justify-center items-center">
+        <div class="h-24 bg-white w-3/4  m-5">
+          <p id="change-me">Look mama i can modify it using js DOM</p>
+        </div>
+       </div>
+  </div>
+  </div>  
+</div>
+<script>
+  document.getElementById('bold').addEventListener('click',function(){
+    const p =document.getElementById('change-me');
+    if(p.style.fontWeight != 'bold')
+       p.style.fontWeight = 'bold';
+      else
+      p.style.fontWeight = 'normal';
+  });
+  document.getElementById('italic').addEventListener('click',function(){
+    const p = document.getElementById('change-me');
+      if(p.style.fontStyle!== 'italic'){
+          p.style.fontStyle ='italic';
+      }
+      else 
+        p.style.fontStyle = 'normal';
+  })
+  document.getElementById('underline').addEventListener('click',function(){
+    const p = document.getElementById('change-me');
+    if(p.style.textDecoration!== 'underline')
+      p.style.textDecoration = 'underline';
+    else 
+      p.style.textDecoration ='none';
+    
+  })
+  document.getElementById('left').addEventListener('click',function(){
+     const p = document.getElementById('change-me');
+     p.style.textAlign = 'left';
+  })
+  document.getElementById('center').addEventListener('click',function(){
+     const p = document.getElementById('change-me');
+     p.style.textAlign = 'center';
+  })
+  document.getElementById('right').addEventListener('click',function(){
+     const p = document.getElementById('change-me');
+     p.style.textAlign = 'right';
+  })
+  document.getElementById('color').addEventListener('input',function(e){
+       let col = e.target.value;
+       const p =document.getElementById('change-me');
+       p.style.color = col;
+  })
+</script>
+</body>
+</html>

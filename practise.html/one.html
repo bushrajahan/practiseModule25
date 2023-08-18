@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p id="price">1000</p>
+   <input type="text" id="inputText">
+   <button id="btn">Apply</button>
+   <p id="pay">please pay </p> 
+   <script>
+    document.getElementById('btn').addEventListener('click',function(){
+        const p = document.getElementById('pay');
+        const rost = document.getElementById('price');
+        const value = rost.innerText*0.3;
+        const inputText = document.getElementById('inputText');
+        const text = inputText.value;
+
+        if(text === 'DSC30'){
+            rost.innerText = value;
+        }
+    
+    })
+   </script>
+</body>
+</html>
